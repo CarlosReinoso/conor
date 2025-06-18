@@ -1,4 +1,5 @@
 import Button from "./Button";
+import { BOOKING_URL } from "../../config/constants";
 
 export default function Coaching() {
   return (
@@ -13,9 +14,12 @@ export default function Coaching() {
           <h4 className="text-lg font-serif mb-2">Initial Consultation</h4>
           <p className="mb-2 text-gray-700">1 hr 30 min</p>
           <p className="mb-4 text-gray-700">$65</p>
-          <button className="bg-[#b97a2b] px-4 py-2 rounded text-white">
+          <a
+            href={BOOKING_URL}
+            className="bg-[#b97a2b] px-4 py-2 rounded text-white inline-block"
+          >
             Book Now
-          </button>
+          </a>
         </div>
       </div>
     </section>
