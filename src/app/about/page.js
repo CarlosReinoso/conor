@@ -36,7 +36,7 @@ export default function About() {
               <div className="space-y-6">
                 <h1 className="text-4xl sm:text-5xl font-light text-gray-900 leading-tight">
                   Hi, I'm Conor
-            </h1>
+                </h1>
                 <p className="text-xl text-gray-600 font-light">
                   Artist, integrated therapist, and community weaver.
                 </p>

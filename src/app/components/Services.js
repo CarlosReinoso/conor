@@ -8,7 +8,7 @@ import Button from "./Button";
 const services = [
   {
     title: "Bodywork & Pain Support",
-    desc: "Personalized therapeutic sessions for pain relief and body balance.",
+    desc: "Personalised therapeutic sessions for pain relief and body balance.",
     icon: <FaHandHoldingHeart className="text-3xl text-[#b97a2b] mb-4" />,
     items: ["Physiotherapy", "Massage Therapy", "Bodywork", "Pain Management"],
   },

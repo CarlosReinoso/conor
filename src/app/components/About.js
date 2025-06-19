@@ -11,9 +11,7 @@ export default function About() {
           className="rounded shadow-lg w-full max-w-xs mx-auto md:mx-0"
         />
         <div>
-          <h2 className="text-2xl font-serif mb-2 !text-white">
-            Meet Conor
-          </h2>
+          <h2 className="text-2xl font-serif mb-2 !text-white">Meet Conor</h2>
           <p className="!text-white mb-4">
             Hi, I'm Conor—artist, integrated therapist, and community weaver.
           </p>

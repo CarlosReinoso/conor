@@ -4,7 +4,6 @@ import Services from "./components/Services";
 import Gallery from "./components/Gallery";
 import CommunitySection from "./components/CommunitySection";
 import Testimonials from "./components/Testimonials";
-import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -17,7 +16,6 @@ export default function Home() {
         <CommunitySection />
         <Gallery />
         <Testimonials />
-        <Footer />
       </div>
     </main>
   );
