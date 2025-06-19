@@ -2,8 +2,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Services from "./components/Services";
 import Gallery from "./components/Gallery";
-import Coaching from "./components/Coaching";
-import Navbar from "./components/Navbar";
+import CommunitySection from "./components/CommunitySection";
 import Testimonials from "./components/Testimonials";
 import Footer from "./components/Footer";
 
@@ -14,7 +13,8 @@ export default function Home() {
         <Hero />
         <About />
         <Services />
-        <Coaching />
+        {/* <Coaching /> */}
+        <CommunitySection />
         <Gallery />
         <Testimonials />
         <Footer />

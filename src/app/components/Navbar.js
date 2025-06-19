@@ -1,11 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
-import { Figtree } from "next/font/google";
 import SocialMediaIcons from "./SocialMediaIcons";
+import { INSTAGRAM_PROFILE, EMAIL_ADDRESS } from "@/config/constants";
 
-const figtree = Figtree({ subsets: ["latin"] });
-
-const menuItems = [
+export const MENU_ITEMS = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/contact", label: "Contact" },
@@ -55,9 +53,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 ${
-        figtree.className
-      } transition-colors duration-300 ${
+      className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${
         isScrolled ? "bg-white" : "bg-transparent"
       }`}
       style={{ pointerEvents: "auto" }}
@@ -83,12 +79,12 @@ export default function Navbar() {
               isScrolled ? "text-primary" : "!text-white"
             }`}
           >
-            {menuItems.map((item) => (
+            {MENU_ITEMS.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 className={`relative group hover:text-primary ${
-                  isScrolled ? "text-primary" : "!text-white"
+                  isScrolled ? "!text-black" : "!text-white"
                 }`}
               >
                 {item.label}
@@ -128,7 +124,7 @@ export default function Navbar() {
         >
           <div className="w-full sm:w-80 bg-primary h-full flex flex-col p-8 relative animate-slide-in-right">
             <button
-              className="absolute top-4 right-4 text-black text-3xl focus:outline-none hover:text-secondary transition-colors"
+              className="absolute top-4 right-4 !text-white !text-4xl focus:outline-none hover:opacity-80 transition-opacity"
               aria-label="Close menu"
               onClick={() => setOpen(false)}
             >
@@ -139,11 +135,11 @@ export default function Navbar() {
                 <Logo onClick={() => setOpen(false)} />
               </div>
 
-              {menuItems.map((item) => (
+              {MENU_ITEMS.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="text-lg font-medium hover:text-secondary transition-colors duration-300 font-figtree text-black"
+                  className="text-lg font-medium hover:opacity-80 transition-opacity duration-300 font-figtree !text-white"
                   onClick={() => setOpen(false)}
                 >
                   {item.label}
@@ -152,11 +148,11 @@ export default function Navbar() {
             </div>
             <div className="flex justify-center gap-6 mt-auto mb-4">
               <a
-                href="https://instagram.com/yourprofile"
+                href={INSTAGRAM_PROFILE}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="hover:text-secondary transition-colors duration-300"
+                className="!text-white hover:opacity-80 transition-opacity duration-300"
               >
                 <svg
                   className="w-7 h-7"
@@ -171,9 +167,9 @@ export default function Navbar() {
                 </svg>
               </a>
               <a
-                href="mailto:hello@thetaliswoman.com"
+                href={`mailto:${EMAIL_ADDRESS}`}
                 aria-label="Email"
-                className="hover:text-secondary transition-colors duration-300"
+                className="!text-white hover:opacity-80 transition-opacity duration-300"
               >
                 <svg
                   className="w-7 h-7"

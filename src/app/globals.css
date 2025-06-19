@@ -15,7 +15,16 @@
   :root {
     --background: #1a1a1a;
     --foreground: #2e5252;
+
+    /* Dark mode adjustments */
+    --secondary: #34d399; /* Lighter Green */
+    --tertiary: #e879f9; /* Lighter Magenta */
   }
+}
+
+/* Custom utility classes */
+.bg-primary {
+  background-color: var(--primary);
 }
 
 body {
