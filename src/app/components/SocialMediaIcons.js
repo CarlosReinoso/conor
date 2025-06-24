@@ -19,7 +19,7 @@ export default function SocialMediaIcons({ isScrolled }) {
           width="24px"
           version="1.1"
           viewBox="0 0 308 308"
-          className={`w-6 h-6 fill-current ${
+          className={`w-4 h-4 md:w-6 md:h-6 fill-current ${
             isScrolled ? "text-black" : "text-white"
           } group-hover:text-primary`}
         >
@@ -41,7 +41,7 @@ export default function SocialMediaIcons({ isScrolled }) {
         className="group transition-colors duration-200"
       >
         <svg
-          className="w-6 h-6 group-hover:stroke-primary group-hover:fill-primary/10"
+          className="w-4 h-4 md:w-6 md:h-6 group-hover:stroke-primary group-hover:fill-primary/10"
           fill="none"
           stroke={isScrolled ? "black" : "white"}
           strokeWidth="2"
@@ -59,7 +59,7 @@ export default function SocialMediaIcons({ isScrolled }) {
         className="group transition-colors duration-200"
       >
         <svg
-          className="w-6 h-6 group-hover:stroke-primary group-hover:fill-primary/10"
+          className="w-4 h-4 md:w-6 md:h-6 group-hover:stroke-primary group-hover:fill-primary/10"
           fill="none"
           stroke={isScrolled ? "black" : "white"}
           strokeWidth="2"

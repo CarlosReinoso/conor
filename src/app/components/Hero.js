@@ -29,8 +29,9 @@ export default function Hero() {
           </h1>
           <div className="w-24 h-1 bg-white/50 mb-8 rounded-full"></div>
           <p className="mb-8 !text-white text-shadow-lg text-xl md:text-2xl lg:text-3xl font-light leading-relaxed max-w-3xl">
-            Cultivating Healing Connection and Growth Through Integrated
-            Therapies and Community Spaces
+            Cultivating Healing Connection and Growth Through
+            <br />
+            Integrated Therapies and Community Spaces
           </p>
           <Button
             href={BOOKING_URL}
