@@ -19,7 +19,7 @@ export default function CommunitySection() {
         <div className="text-center md:text-left">
           <h2 className="text-3xl font-serif mb-6 !text-white">Community & Events</h2>
           <p className="text-lg mb-8 !text-white">
-            Curious about community jams, classes, or creative healing work?
+            Curious about community jams, classes, or events?
           </p>
           <Button
             href={EVENTBRITE_URL}

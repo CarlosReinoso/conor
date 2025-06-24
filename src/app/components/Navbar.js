@@ -1,31 +1,15 @@
 "use client";
 import { useState, useEffect } from "react";
 import SocialMediaIcons from "./SocialMediaIcons";
-import { INSTAGRAM_PROFILE, EMAIL_ADDRESS } from "@/config/constants";
+import Logo from "./Logo";
+import { EVENTBRITE_URL } from "@/config/constants";
 
 export const MENU_ITEMS = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
+  { href: EVENTBRITE_URL, label: "Community" },
   { href: "/contact", label: "Contact" },
 ];
-
-const Logo = ({ isScrolled, onClick }) => {
-  return (
-    <a
-      href="/"
-      onClick={onClick}
-      className="transition-opacity duration-300 hover:opacity-80"
-    >
-      <img
-        src="/logo.png"
-        alt="Conor O'Sullivan"
-        className={`h-12 w-auto transition-all duration-300 ${
-          isScrolled ? "brightness-0" : "brightness-0 invert"
-        }`}
-      />
-    </a>
-  );
-};
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -83,12 +67,12 @@ export default function Navbar() {
               <a
                 key={item.href}
                 href={item.href}
-                className={`relative group hover:text-primary ${
+                className={`!text-sm relative group hover:text-primary ${
                   isScrolled ? "!text-black" : "!text-white"
                 }`}
               >
                 {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-500 ease-out group-hover:w-full origin-left transform scale-x-0 group-hover:scale-x-100"></span>
               </a>
             ))}
           </div>
@@ -139,7 +123,7 @@ export default function Navbar() {
                 <a
                   key={item.href}
                   href={item.href}
-                  className="text-lg font-medium hover:opacity-80 transition-opacity duration-300 font-figtree !text-white"
+                  className="text-sm font-medium hover:opacity-80 transition-opacity duration-300 font-figtree !text-white"
                   onClick={() => setOpen(false)}
                 >
                   {item.label}
@@ -147,41 +131,7 @@ export default function Navbar() {
               ))}
             </div>
             <div className="flex justify-center gap-6 mt-auto mb-4">
-              <a
-                href={INSTAGRAM_PROFILE}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="!text-white hover:opacity-80 transition-opacity duration-300"
-              >
-                <svg
-                  className="w-7 h-7"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <rect x="2" y="2" width="20" height="20" rx="5" />
-                  <circle cx="12" cy="12" r="4" />
-                  <circle cx="18" cy="6" r="1" />
-                </svg>
-              </a>
-              <a
-                href={`mailto:${EMAIL_ADDRESS}`}
-                aria-label="Email"
-                className="!text-white hover:opacity-80 transition-opacity duration-300"
-              >
-                <svg
-                  className="w-7 h-7"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <rect x="2" y="4" width="20" height="16" rx="2" />
-                  <path d="M22 6 12 13 2 6" />
-                </svg>
-              </a>
+              <SocialMediaIcons isScrolled={isScrolled} />
             </div>
           </div>
         </div>

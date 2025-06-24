@@ -13,7 +13,7 @@ export default function About() {
         <div>
           <h2 className="text-2xl font-serif mb-2 !text-white">Meet Conor</h2>
           <p className="!text-white mb-4">
-            Hi, I'm Conor—artist, integrated therapist, and community weaver.
+            Hi, I'm Conor—integrated therapist, community weaver and musician.
           </p>
           <p className="!text-white mb-4">
             I founded Supple Space in 2014 as a place for people to heal and

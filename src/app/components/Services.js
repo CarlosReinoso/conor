@@ -1,30 +1,9 @@
 "use client";
 
 import { BOOKING_URL } from "../../config/constants";
+import { services } from "../../config/services";
 import { motion } from "framer-motion";
-import { FaHandHoldingHeart, FaRunning, FaWind } from "react-icons/fa";
 import Button from "./Button";
-
-const services = [
-  {
-    title: "Bodywork & Pain Support",
-    desc: "Personalised therapeutic sessions for pain relief and body balance.",
-    icon: <FaHandHoldingHeart className="text-3xl text-[#b97a2b] mb-4" />,
-    items: ["Physiotherapy", "Massage Therapy", "Bodywork", "Pain Management"],
-  },
-  {
-    title: "Movement & Training",
-    desc: "Functional training for rehabilitation and everyday ease.",
-    icon: <FaRunning className="text-3xl text-[#b97a2b] mb-4" />,
-    items: ["Movement Therapy", "Functional Training"],
-  },
-  {
-    title: "Breath & Mind-Body",
-    desc: "Nervous system support through mindful practices.",
-    icon: <FaWind className="text-3xl text-[#b97a2b] mb-4" />,
-    items: ["Breathwork", "Meditation"],
-  },
-];
 
 export default function Services() {
   return (
@@ -80,12 +59,12 @@ export default function Services() {
             >
               {service.icon}
               <h4 className="font-serif mb-2 text-lg">{service.title}</h4>
-              <p className="text-sm text-gray-600 mb-3">{service.desc}</p>
+              <p className="text-sm text-gray-600 mb-3">{service.shortDesc}</p>
               <ul className="space-y-1 text-sm">
                 {service.items.map((item, idx) => (
                   <li key={idx} className="flex items-center">
                     <span className="text-[#b97a2b] mr-2">•</span>
-                    {item}
+                    {item.name}
                   </li>
                 ))}
               </ul>

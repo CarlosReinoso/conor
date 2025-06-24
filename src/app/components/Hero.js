@@ -1,22 +1,22 @@
 "use client";
 
-import Image from "next/image";
 import Button from "./Button";
 import { BOOKING_URL } from "../../config/constants";
 import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative bg-black text-white min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/hero.webp"
-          alt="Hero background"
-          fill
-          className="object-cover opacity-50 scale-105 transition-transform duration-[2s] hover:scale-100"
-          priority
+        <video
+          src="/hero.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="object-cover w-full h-full scale-105 transition-transform duration-[2s] hover:scale-100"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/10"></div>
       </div>
       <div className="max-w-5xl mx-auto relative z-10 px-4">
         <motion.div
@@ -28,7 +28,7 @@ export default function Hero() {
             Conor O'Sullivan
           </h1>
           <div className="w-24 h-1 bg-white/50 mb-8 rounded-full"></div>
-          <p className="mb-8 !text-white drop-shadow-md text-xl md:text-2xl lg:text-3xl font-light leading-relaxed max-w-3xl">
+          <p className="mb-8 !text-white text-shadow-lg text-xl md:text-2xl lg:text-3xl font-light leading-relaxed max-w-3xl">
             Cultivating Healing Connection and Growth Through Integrated
             Therapies and Community Spaces
           </p>

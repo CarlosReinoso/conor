@@ -6,8 +6,18 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const testimonials = [
   {
+    text: "Conor is fantastic, can't rate him enough. Super knowledgeable and really tried to understand what's going on with my mind- body connection as part of the treatment which feels very helpful. I always leave feeling better and lighter",
+    author: "Lauren",
+    rating: 5,
+  },
+  {
     text: "Great experience. Very professional. Would recommend.",
     author: "Sam",
+    rating: 5,
+  },
+  {
+    text: "I had a fantastic Myofascial therapy session with Connor. The environment was calm and relaxing; he was extremely attentive, actively listening to my pain points and areas of tension. He worked exactly where needed, and I felt so much relief.",
+    author: "Lela",
     rating: 5,
   },
   {

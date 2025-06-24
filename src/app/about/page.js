@@ -38,7 +38,7 @@ export default function About() {
                   Hi, I'm Conor
                 </h1>
                 <p className="text-xl text-gray-600 font-light">
-                  Artist, integrated therapist, and community weaver.
+                  Integrated therapist, community weaver and musician
                 </p>
               </div>
 
@@ -65,7 +65,7 @@ export default function About() {
 
                 <p>
                   Whether you're working through pain, exploring your movement,
-                  or just curious to see what unfolds—you're welcome here.
+                  expanding your community—you're welcome here.
                 </p>
               </div>
 
