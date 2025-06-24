@@ -38,9 +38,9 @@ export const services = [
           "Deep tissue and therapeutic massage to help you find relief from tension",
       },
       {
-        name: "Fascial Release",
+        name: "Myofascial  Release",
         description:
-          "Release tension in your connective tissue for improved mobility",
+          "Hands on techniques using a range of practices including myofascial release",
       },
       {
         name: "Pain Management",

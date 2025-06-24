@@ -1,6 +1,7 @@
 "use client";
 import { INSTAGRAM_PROFILE, EMAIL_ADDRESS } from "@/config/constants";
 import { MENU_ITEMS } from "./Navbar";
+import SocialMediaIcons from "./SocialMediaIcons";
 
 export default function Footer() {
   return (
@@ -8,51 +9,15 @@ export default function Footer() {
       <div className="max-w-[1000px] mx-auto">
         <div className="flex items-center justify-between py-4 px-4">
           {/* Social Icons */}
-          <div className="flex gap-6">
-            <a
-              href={INSTAGRAM_PROFILE}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              className="hover:opacity-70 transition-opacity"
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-              >
-                <rect x="2" y="2" width="20" height="20" rx="5" />
-                <circle cx="12" cy="12" r="4" />
-                <circle cx="18" cy="6" r="1" />
-              </svg>
-            </a>
-            <a
-              href={`mailto:${EMAIL_ADDRESS}`}
-              aria-label="Email"
-              className="hover:opacity-70 transition-opacity"
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-              >
-                <rect x="2" y="4" width="20" height="16" rx="2" />
-                <path d="M22 6 12 13 2 6" />
-              </svg>
-            </a>
-          </div>
+          <SocialMediaIcons isScrolled={true} />
 
           {/* Navigation Links */}
-          <div className="flex gap-6">
+          <div className="flex flex-wrap gap-4 sm:gap-6 justify-center sm:justify-start min-w-0">
             {MENU_ITEMS.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="text-gray-900 hover:text-black transition-colors text-base"
+                className="text-gray-900 hover:text-black transition-colors text-base whitespace-nowrap"
               >
                 {item.label}
               </a>
