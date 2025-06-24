@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import SocialMediaIcons from "./SocialMediaIcons";
 import Logo from "./Logo";
 import { EVENTBRITE_URL } from "@/config/constants";
@@ -14,6 +15,8 @@ export const MENU_ITEMS = [
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,32 +38,35 @@ export default function Navbar() {
     };
   }, [open]);
 
+  // Determine if navbar should be sticky (white background, black text)
+  const shouldBeSticky = !isHomePage || isScrolled;
+
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${
-        isScrolled ? "bg-white" : "bg-transparent"
+        shouldBeSticky ? "bg-white" : "bg-transparent"
       }`}
       style={{ pointerEvents: "auto" }}
     >
       <nav
         className={`max-w-5xl mx-auto flex items-center justify-between px-4 py-2 md:py-3 transition-colors duration-300 ${
-          isScrolled ? "text-primary" : "!text-white"
+          shouldBeSticky ? "text-primary" : "!text-white"
         }`}
       >
         {/* Left: Social Media Icons */}
         <div className="flex-1 flex items-center">
-          <SocialMediaIcons isScrolled={isScrolled} />
+          <SocialMediaIcons isScrolled={shouldBeSticky} />
         </div>
         {/* Center: Logo */}
         <div className="flex-1 flex justify-center items-center">
-          <Logo isScrolled={isScrolled} />
+          <Logo isScrolled={shouldBeSticky} />
         </div>
         {/* Right: Hamburger (mobile) or menu (desktop) */}
         <div className="flex-1 flex justify-end items-center">
           {/* Desktop menu */}
           <div
             className={`hidden md:flex gap-8 text-base font-medium font-figtree transition-colors duration-300 ${
-              isScrolled ? "text-primary" : "!text-white"
+              shouldBeSticky ? "text-primary" : "!text-white"
             }`}
           >
             {MENU_ITEMS.map((item) => (
@@ -68,7 +74,7 @@ export default function Navbar() {
                 key={item.href}
                 href={item.href}
                 className={`!text-sm relative group hover:text-primary ${
-                  isScrolled ? "!text-black" : "!text-white"
+                  shouldBeSticky ? "!text-black" : "!text-white"
                 }`}
               >
                 {item.label}
@@ -85,7 +91,7 @@ export default function Navbar() {
             <svg
               className="w-7 h-7"
               fill="none"
-              stroke={isScrolled ? "currentColor" : "white"}
+              stroke={shouldBeSticky ? "currentColor" : "white"}
               strokeWidth="2"
               viewBox="0 0 24 24"
             >
@@ -131,7 +137,7 @@ export default function Navbar() {
               ))}
             </div>
             <div className="flex justify-center gap-6 mt-auto mb-4">
-              <SocialMediaIcons isScrolled={isScrolled} />
+              <SocialMediaIcons isScrolled={shouldBeSticky} />
             </div>
           </div>
         </div>

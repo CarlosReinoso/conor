@@ -2,16 +2,27 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useRef, useEffect } from "react";
 import Button from "../components/Button";
 import { BOOKING_URL, EVENTBRITE_URL } from "../../config/constants";
 
 export default function About() {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      // Start video from 5 seconds (you can change this value)
+      videoRef.current.currentTime = 5;
+    }
+  }, []);
+
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white pt-20">
       <div className="flex flex-col lg:flex-row min-h-screen">
         {/* Video Section - Full height on mobile, left side on desktop */}
         <div className="relative w-full h-screen lg:w-1/2 lg:sticky lg:top-0">
           <video
+            ref={videoRef}
             autoPlay
             loop
             muted
@@ -24,7 +35,7 @@ export default function About() {
         </div>
 
         {/* Content Section */}
-        <div className="w-full lg:w-2/3 px-4 py-16 lg:py-24">
+        <div className="w-full lg:w-2/3 px-4 pb-16 pt-16 lg:py-12">
           <div className="max-w-xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
