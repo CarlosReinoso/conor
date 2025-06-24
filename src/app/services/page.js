@@ -7,7 +7,7 @@ import Button from "../components/Button";
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen bg-neutral-50">
+    <main className="min-h-screen bg-neutral-50 pt-20">
       {/* Hero Section */}
       <section className="relative h-[40vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-[#b97a2b]/10" />
